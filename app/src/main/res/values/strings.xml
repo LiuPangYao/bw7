@@ -17,7 +17,7 @@
 <resources>
 
     <!-- Resources that do not require translation -->
-    <string name="app_name" translatable="false">Sunflower</string>
+    <string name="app_name" translatable="false">BW World</string>
 
     <!-- Translatable resources -->
     <string name="menu_filter_by_grow_zone" translation_description="The label for the menu item to filter the displayed plants by grow zone.">Filter by grow zone</string>
