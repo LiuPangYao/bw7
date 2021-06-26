@@ -56,6 +56,7 @@ class HomeViewPagerFragment : Fragment() {
 
     private fun getTabIcon(position: Int): Int {
         return when (position) {
+            //20210626 更換 icon
             MY_GARDEN_PAGE_INDEX -> R.drawable.garden_tab_selector
             PLANT_LIST_PAGE_INDEX -> R.drawable.plant_list_tab_selector
             else -> throw IndexOutOfBoundsException()
