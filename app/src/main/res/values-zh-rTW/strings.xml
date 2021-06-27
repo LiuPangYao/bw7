@@ -45,4 +45,6 @@
     <string name="gallery_title">圖片來源：Unsplash</string>
     <string name="gallery_content_description">跳轉到圖庫</string>
 
+    <string name="about_string">關於</string>
+
 </resources>

@@ -17,11 +17,14 @@
 package com.google.samples.apps.sunflower
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.samples.apps.sunflower.adapters.MY_GARDEN_PAGE_INDEX
 import com.google.samples.apps.sunflower.adapters.PLANT_LIST_PAGE_INDEX
@@ -40,6 +43,14 @@ class HomeViewPagerFragment : Fragment() {
         val binding = FragmentViewPagerBinding.inflate(inflater, container, false)
         val tabLayout = binding.tabs
         val viewPager = binding.viewPager
+        
+        // 20210627 start
+        val aboutButton = binding.imageViewAbout
+        aboutButton.setOnClickListener {view ->
+            Log.d("LOG_TAG", "click about button")
+            view.findNavController().navigate(R.id.about_fragment)
+        }
+        // 20210627 end
 
         viewPager.adapter = SunflowerPagerAdapter(this)
 
