@@ -62,7 +62,7 @@ class AboutFragment : Fragment() {
         try {
             val pInfo = requireContext().packageManager.getPackageInfo(requireContext().packageName, 0)
             val version = pInfo.versionName
-            binding.textViewVersion.setText(version.toString())
+            binding.textViewVersion.setText("V " + version.toString())
         } catch (e: PackageManager.NameNotFoundException) {
             e.printStackTrace()
         }

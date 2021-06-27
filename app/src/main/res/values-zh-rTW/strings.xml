@@ -24,20 +24,20 @@
     <string name="add_plant">添加蒐藏</string>
     <string name="added_plant_to_garden">添加了新蒐藏</string>
     <string name="garden_empty">列表裡還沒有蒐藏</string>
-    <string name="plant_date_header">種下日期</string>
+    <string name="plant_date_header">購入日期</string>
     <string name="watered_date_header">最後澆水</string>
     <string name="menu_item_share_plant">分享</string>
     <string name="share_text_plant">在安卓 Sunflower APP 上看看這 %s</string>
 
     <!-- String plurals and their related prefix / suffix strings -->
     <!-- Item quantities for zero and one are not used in Chinese -->
-    <string name="watering_needs_prefix">澆水指南</string>
+    <string name="watering_needs_prefix">價格</string>
     <plurals name="watering_needs_suffix">
-        <item quantity="other">每隔 %d 天</item>
+        <item quantity="other">NT %d</item>
     </plurals>
 
     <plurals name="watering_next">
-        <item quantity="other">%d 天後澆水</item>
+        <item quantity="other">購入價格 %d</item>
     </plurals>
 
     <!-- Accessibility -->
