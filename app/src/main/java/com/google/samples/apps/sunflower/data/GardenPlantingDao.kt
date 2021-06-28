@@ -43,7 +43,7 @@ interface GardenPlantingDao {
     fun getPlantedGardens(): Flow<List<PlantAndGardenPlantings>>
 
     @Insert
-    suspend fun insertGardenPlanting(gardenPlanting: GardenPlanting): Long
+    suspend fun insertGardenPlanting(gardenPlanting: GardenPlanting)
 
     @Delete
     suspend fun deleteGardenPlanting(gardenPlanting: GardenPlanting)

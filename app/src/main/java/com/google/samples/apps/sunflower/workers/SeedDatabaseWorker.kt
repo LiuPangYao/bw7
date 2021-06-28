@@ -53,16 +53,16 @@ class SeedDatabaseWorker(
                 Result.failure()
             }*/
 
-            val toy_1: Plant = Plant("BW7-Moss", "BW7-Moss", "全身佈滿青苔,適合戶外拍照", 2400, 2400, "https://imgur.com/zW4Ap3X.png")
-            val toy_2: Plant = Plant("BW7-原子小金剛", "BW7-原子小金剛", "元子小金剛配色", 2600, 2600, "https://imgur.com/1QOZdzV.png")
-            val toy_3: Plant = Plant("BW7-變形金剛配色", "BW7-變形金剛配色", "變形金剛-柯博文配色", 2600, 2600, "https://imgur.com/9s4luw2.png")
-            val toy_4: Plant = Plant("BW7-變形金剛配色", "BW7-變形金剛配色", "2020 TTF 限定版,變形金剛-大黃蜂配色", 2600, 2600, "https://imgur.com/pASuuVN.png")
-            val toy_5: Plant = Plant("BW7-巴斯光年", "BW7-巴斯光年", "玩具總動員巴斯光年配色,搭配翅膀", 2600, 2600, "https://imgur.com/bMDWcpI.png")
+            val toy_1: Plant = Plant("BW7-Moss", "BW7-Moss", "本次全新 BW-7 MOSS 版本,加入青苔元素,除了原有的舊化厚實質感外,也有著融入大自然,展現生命力的一面.", 2400, 2400, "https://imgur.com/zW4Ap3X.png")
+            val toy_2: Plant = Plant("BW7-原子小金剛", "BW7-原子小金剛", "原子小金剛配色,本次全新 BW-7 Power 版本,除了原有的舊化厚實質感外,也展現了十足力量感.", 2600, 2600, "https://imgur.com/1QOZdzV.png")
+            val toy_3: Plant = Plant("BW7-變形金剛柯博文", "BW7-變形金剛柯博文", "變形金剛-柯博文配色,本次全新 BW-7 MR 版本,除了原有的舊化厚實質感外,也展現了帥氣的機器人造型.", 2600, 2600, "https://imgur.com/9s4luw2.png")
+            val toy_4: Plant = Plant("BW7-變形金剛大黃蜂", "BW7-變形金剛大黃蜂", "2020 TTF 會場限定版,變形金剛-大黃蜂配色", 2500, 2500, "https://imgur.com/pASuuVN.png")
+            val toy_5: Plant = Plant("BW7-巴斯光年", "BW7-巴斯光年", "玩具總動員巴斯光年配色,BW-7 Robot Ver.4 宇宙版本,除了原有的舊化厚實質感,也帶出十足的宇宙感,猶如要奔向外太空般的氣勢.", 2600, 2600, "https://imgur.com/bMDWcpI.png")
             val toy_6: Plant = Plant("BW7-復仇者聯盟", "BW7-復仇者聯盟", "胸口紅色寶石,搭配藍寶石手套", 2500, 2500, "https://imgur.com/9DxxmxR.png")
-            val toy_7: Plant = Plant("BW7-紅", "BW7-紅", "紅,藍,綠 3色早期作品", 2500, 2500, "https://imgur.com/AAI9dn3.png")
-            val toy_8: Plant = Plant("BW7-綠", "BW7-綠", "紅,藍,綠 3色早期作品", 2500, 2500, "https://imgur.com/nAbEfEw.png")
-            val toy_9: Plant = Plant("BW7-藍", "BW7-藍", "紅,藍,綠 3色早期作品", 2500, 2500, "https://imgur.com/nAbEfEw.png")
-            val toy_10: Plant = Plant("BW7-透明", "BW7-透明", "未販售 透明版", 2500, 2500, "https://imgur.com/nAbEfEw.png")
+            val toy_7: Plant = Plant("BW7-紅", "BW7-紅", "紅,藍,綠 3色早期作品,BW-7 Robot 紅色聖誕版本,除了原有的舊化厚實質感,這次應景了聖誕氣氛,以鮮豔的紅色,整體配色較為繽紛豐富,還有附上可愛白色小毛球可隨意搭配,像是聖誕老公公一般帶給大家祝福!", 2500, 2500, "https://imgur.com/AAI9dn3.png")
+            val toy_8: Plant = Plant("BW7-綠", "BW7-綠", "紅,藍,綠 3色早期作品,Monster Taipei 20週年紀念版 - 軟膠公仔", 2200, 2200, "https://imgur.com/nAbEfEw.png")
+            val toy_9: Plant = Plant("BW7-藍", "BW7-藍", "紅,藍,綠 3色早期作品.", 2500, 2500, "https://imgur.com/nAbEfEw.png")
+            val toy_10: Plant = Plant("BW7-透明", "BW7-透明", "未販售,透明版.", 2500, 2500, "https://imgur.com/nAbEfEw.png")
 
             val plantList: MutableList<Plant>  = mutableListOf()
 

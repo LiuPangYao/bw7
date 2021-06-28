@@ -25,8 +25,40 @@ class GardenPlantingRepository @Inject constructor(
 ) {
 
     suspend fun createGardenPlanting(plantId: String) {
-        val gardenPlanting = GardenPlanting(plantId)
+
+        val gardenPlanting:GardenPlanting
+        when (plantId) {
+            "BW7-Moss" -> {
+                gardenPlanting = GardenPlanting(plantId, "2021-06-11", "2021-06-11")
+            }
+            "BW7-變形金剛柯博文" -> {
+                gardenPlanting = GardenPlanting(plantId, "2021-05-02", "2021-05-02")
+            }
+            "BW7-原子小金剛" -> {
+                gardenPlanting = GardenPlanting(plantId, "2021-01-30", "2021-01-30")
+            }
+            "BW7-變形金剛大黃蜂" -> {
+                gardenPlanting = GardenPlanting(plantId, "2020-12-20", "2020-12-20")
+            }
+            "BW7-巴斯光年" -> {
+                gardenPlanting = GardenPlanting(plantId, "2020-10-21", "2020-10-21")
+            }
+            "BW7-紅" -> {
+                gardenPlanting = GardenPlanting(plantId, "2019-12-25", "2019-12-25")
+            }
+            "BW7-綠" -> {
+                gardenPlanting = GardenPlanting(plantId, "2019-12-20", "2019-12-20")
+            }
+            else -> {
+                gardenPlanting = GardenPlanting(plantId, "unknow", "unknow")
+            }
+        }
+
         gardenPlantingDao.insertGardenPlanting(gardenPlanting)
+    }
+
+    private fun switch(plantId: String, function: () -> Nothing) {
+
     }
 
     suspend fun removeGardenPlanting(gardenPlanting: GardenPlanting) {
