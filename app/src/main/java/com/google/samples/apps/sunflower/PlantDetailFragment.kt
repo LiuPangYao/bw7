@@ -16,11 +16,19 @@
 
 package com.google.samples.apps.sunflower
 
+import android.app.DatePickerDialog
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
+import android.util.TypedValue
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RelativeLayout
+import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.app.ShareCompat
 import androidx.core.widget.NestedScrollView
@@ -36,6 +44,8 @@ import com.google.samples.apps.sunflower.data.Plant
 import com.google.samples.apps.sunflower.databinding.FragmentPlantDetailBinding
 import com.google.samples.apps.sunflower.viewmodels.PlantDetailViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import java.util.*
+
 
 /**
  * A fragment representing a single Plant detail screen.
@@ -61,10 +71,13 @@ class PlantDetailFragment : Fragment() {
             lifecycleOwner = viewLifecycleOwner
             callback = Callback { plant ->
                 plant?.let {
-                    hideAppBarFab(fab)
-                    plantDetailViewModel.addPlantToGarden()
-                    Snackbar.make(root, R.string.added_plant_to_garden, Snackbar.LENGTH_LONG)
-                        .show()
+                    //hideAppBarFab(fab)
+
+                    createDatePicker(fab, rootview)
+
+                    //20210629 改
+                    //plantDetailViewModel.addPlantToGarden()
+                    //Snackbar.make(root, R.string.added_plant_to_garden, Snackbar.LENGTH_LONG).show()
                 }
             }
 
@@ -111,6 +124,60 @@ class PlantDetailFragment : Fragment() {
         setHasOptionsMenu(true)
 
         return binding.root
+    }
+
+    private fun createDatePicker(fab: FloatingActionButton, rootView: CoordinatorLayout) {
+        val tvCustomTitle = TextView(activity)
+
+        val lp = RelativeLayout.LayoutParams(
+            RelativeLayout.LayoutParams.WRAP_CONTENT,
+            RelativeLayout.LayoutParams.WRAP_CONTENT
+        )
+
+        tvCustomTitle.layoutParams = lp
+        tvCustomTitle.setPadding(0, 25, 0, 25)
+        tvCustomTitle.gravity = Gravity.CENTER
+        tvCustomTitle.setTextColor(Color.parseColor("#000000"))
+        tvCustomTitle.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 20f)
+        tvCustomTitle.text = getString(R.string.date_setting)
+
+        val calendar_inst = Calendar.getInstance()
+        val date_picker_dlg = DatePickerDialog(
+            requireActivity(),
+            { view, year, monthOfYear, dayOfMonth -> },
+            calendar_inst.get(Calendar.YEAR),
+            calendar_inst.get(Calendar.MONTH),
+            calendar_inst.get(Calendar.DAY_OF_MONTH)
+        )
+        date_picker_dlg.setButton(
+            DatePickerDialog.BUTTON_POSITIVE, getString(R.string.ok_setting)
+        ) { dialog, which ->
+
+            val mYear = date_picker_dlg.datePicker.year
+            val mMonth = date_picker_dlg.datePicker.month
+            val mDay = date_picker_dlg.datePicker.dayOfMonth
+            Log.d("TAG",
+                String.format("Selected date : %d/%d/%d", mYear, mMonth, mDay)
+            )
+
+            hideAppBarFab(fab)
+            plantDetailViewModel.addPlantToGarden(String.format("%d-%d-%d", mYear, mMonth, mDay))
+            Snackbar.make(rootView, R.string.added_plant_to_garden, Snackbar.LENGTH_LONG).show()
+        }
+        date_picker_dlg.setButton(
+            DatePickerDialog.BUTTON_NEGATIVE, getString(R.string.cancel_setting)
+        ) { dialog, which ->
+            Log.d("TAG",
+                "Click cancel")
+        }
+
+        //date_picker_dlg.datePicker.minDate = Date().getTime()
+        //date_picker_dlg.datePicker.maxDate = Date().getTime()
+        date_picker_dlg.setCustomTitle(tvCustomTitle)
+        date_picker_dlg.setTitle(getString(R.string.date_setting))
+        date_picker_dlg.datePicker.calendarViewShown = false
+        date_picker_dlg.datePicker.spinnersShown = true
+        date_picker_dlg.show()
     }
 
     private fun navigateToGallery() {

@@ -43,9 +43,9 @@ class PlantDetailViewModel @Inject constructor(
     val isPlanted = gardenPlantingRepository.isPlanted(plantId).asLiveData()
     val plant = plantRepository.getPlant(plantId).asLiveData()
 
-    fun addPlantToGarden() {
+    fun addPlantToGarden(dateBuy: String) {
         viewModelScope.launch {
-            gardenPlantingRepository.createGardenPlanting(plantId)
+            gardenPlantingRepository.createGardenPlanting(plantId, dateBuy)
         }
     }
 

@@ -24,8 +24,8 @@
     <string name="add_plant">添加蒐藏</string>
     <string name="added_plant_to_garden">添加了新蒐藏</string>
     <string name="garden_empty">列表裡還沒有蒐藏</string>
-    <string name="plant_date_header">購入日期</string>
-    <string name="watered_date_header">最後澆水</string>
+    <string name="plant_date_header">初版製造日期</string>
+    <string name="watered_date_header">購入日期</string>
     <string name="menu_item_share_plant">分享</string>
     <string name="share_text_plant">在 Android BW World APP 上看看這 %s</string>
 
@@ -46,5 +46,8 @@
     <string name="gallery_content_description">跳轉到圖庫</string>
 
     <string name="about_string">關於</string>
+    <string name="date_setting">時間設定</string>
+    <string name="ok_setting">確認</string>
+    <string name="cancel_setting">取消</string>
 
 </resources>

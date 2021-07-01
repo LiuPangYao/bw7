@@ -27,8 +27,11 @@ import kotlinx.coroutines.flow.Flow
  */
 @Dao
 interface PlantDao {
-    @Query("SELECT * FROM plants ORDER BY name")
+    @Query("SELECT * FROM plants ORDER BY pngId ASC")
     fun getPlants(): Flow<List<Plant>>
+
+    @Query("SELECT * FROM plants ORDER BY pngId DESC")
+    fun getPlantsOrder(): Flow<List<Plant>>
 
     @Query("SELECT * FROM plants WHERE growZoneNumber = :growZoneNumber ORDER BY name")
     fun getPlantsWithGrowZoneNumber(growZoneNumber: Int): Flow<List<Plant>>

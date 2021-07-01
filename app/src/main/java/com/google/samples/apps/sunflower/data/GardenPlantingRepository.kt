@@ -24,33 +24,42 @@ class GardenPlantingRepository @Inject constructor(
     private val gardenPlantingDao: GardenPlantingDao
 ) {
 
-    suspend fun createGardenPlanting(plantId: String) {
+    suspend fun createGardenPlanting(plantId: String, dateBuy: String) {
 
         val gardenPlanting:GardenPlanting
         when (plantId) {
             "BW7-Moss" -> {
-                gardenPlanting = GardenPlanting(plantId, "2021-06-11", "2021-06-11")
+                gardenPlanting = GardenPlanting(plantId, "2021-06-11", dateBuy)
             }
             "BW7-變形金剛柯博文" -> {
-                gardenPlanting = GardenPlanting(plantId, "2021-05-02", "2021-05-02")
+                gardenPlanting = GardenPlanting(plantId, "2021-05-02", dateBuy)
             }
             "BW7-原子小金剛" -> {
-                gardenPlanting = GardenPlanting(plantId, "2021-01-30", "2021-01-30")
+                gardenPlanting = GardenPlanting(plantId, "2021-01-30", dateBuy)
             }
             "BW7-變形金剛大黃蜂" -> {
-                gardenPlanting = GardenPlanting(plantId, "2020-12-20", "2020-12-20")
+                gardenPlanting = GardenPlanting(plantId, "2020-12-20", dateBuy)
             }
             "BW7-巴斯光年" -> {
-                gardenPlanting = GardenPlanting(plantId, "2020-10-21", "2020-10-21")
+                gardenPlanting = GardenPlanting(plantId, "2020-11-01", dateBuy)
+            }
+            "BW7-巴斯光年" -> {
+                gardenPlanting = GardenPlanting(plantId, "2020-10-21", dateBuy)
             }
             "BW7-紅" -> {
-                gardenPlanting = GardenPlanting(plantId, "2019-12-25", "2019-12-25")
+                gardenPlanting = GardenPlanting(plantId, "2019-12-25", dateBuy)
             }
             "BW7-綠" -> {
-                gardenPlanting = GardenPlanting(plantId, "2019-12-20", "2019-12-20")
+                gardenPlanting = GardenPlanting(plantId, "2019-12-20", dateBuy)
+            }
+            "BW7-藍" -> {
+                gardenPlanting = GardenPlanting(plantId, "2019-12-21", dateBuy)
+            }
+            "BW7-螢光" -> {
+                gardenPlanting = GardenPlanting(plantId, "2021-07-01", dateBuy)
             }
             else -> {
-                gardenPlanting = GardenPlanting(plantId, "unknow", "unknow")
+                gardenPlanting = GardenPlanting(plantId, "unknow", dateBuy)
             }
         }
 
