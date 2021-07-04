@@ -154,7 +154,7 @@ class PlantDetailFragment : Fragment() {
         ) { dialog, which ->
 
             val mYear = date_picker_dlg.datePicker.year
-            val mMonth = date_picker_dlg.datePicker.month
+            val mMonth = date_picker_dlg.datePicker.month+1
             val mDay = date_picker_dlg.datePicker.dayOfMonth
             Log.d("TAG",
                 String.format("Selected date : %d/%d/%d", mYear, mMonth, mDay)
