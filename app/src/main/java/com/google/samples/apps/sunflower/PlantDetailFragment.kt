@@ -26,9 +26,9 @@ import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
-import androidx.appcompat.app.AlertDialog
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.app.ShareCompat
 import androidx.core.widget.NestedScrollView
@@ -55,6 +55,9 @@ class PlantDetailFragment : Fragment() {
 
     private val plantDetailViewModel: PlantDetailViewModel by viewModels()
 
+    lateinit var manualImage: ImageView
+    lateinit var manualTextView: TextView
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -72,14 +75,16 @@ class PlantDetailFragment : Fragment() {
             callback = Callback { plant ->
                 plant?.let {
                     //hideAppBarFab(fab)
-
                     createDatePicker(fab, rootview)
 
-                    //20210629 改
+                    //20210629 update
                     //plantDetailViewModel.addPlantToGarden()
                     //Snackbar.make(root, R.string.added_plant_to_garden, Snackbar.LENGTH_LONG).show()
                 }
             }
+
+            manualImage = root.findViewById(R.id.manualImage1)
+            manualTextView = root.findViewById(R.id.manualText)
 
             galleryNav.setOnClickListener { navigateToGallery() }
 
@@ -120,10 +125,64 @@ class PlantDetailFragment : Fragment() {
                     else -> false
                 }
             }
+
+            manualButton.setOnClickListener { view ->
+                //manualTextView.visibility = View.GONE
+
+                when (plantDetailViewModel.plant.value?.name) {
+                    "BW7-Moss" -> {
+                        manualImage.setImageResource(R.drawable.bw09)
+                        manualTextView.visibility = View.GONE
+                    }
+                    "BW7-變形金剛柯博文" -> {
+                        manualImage.setImageResource(R.drawable.bw08)
+                        manualTextView.visibility = View.GONE
+                    }
+                    "BW7-原子小金剛" -> {
+                        manualImage.setImageResource(R.drawable.bw07)
+                        manualTextView.visibility = View.GONE
+                    }
+                    "BW7-復仇者聯盟" -> {
+                        manualImage.setImageResource(R.drawable.bw05)
+                        manualTextView.visibility = View.GONE
+                    }
+                    "BW7-變形金剛大黃蜂" -> {
+                        manualImage.setImageResource(R.drawable.bw06)
+                        manualTextView.visibility = View.GONE
+                    }
+                    "BW7-巴斯光年" -> {
+                        manualImage.setImageResource(R.drawable.bw04)
+                        manualTextView.visibility = View.GONE
+                    }
+                    "BW7-紅" -> {
+                        manualImage.setImageResource(R.drawable.bw03)
+                        manualTextView.visibility = View.GONE
+                    }
+                    "BW7-綠" -> {
+                        manualImage.setImageResource(R.drawable.bw01)
+                        manualTextView.visibility = View.GONE
+                    }
+                    "BW7-藍" -> {
+                        manualImage.setImageResource(R.drawable.bw02)
+                        manualTextView.visibility = View.GONE
+                    }
+                    "BW7-螢光" -> {
+                        manualImage.setImageResource(R.drawable.bw10)
+                        manualTextView.visibility = View.GONE
+                    } else -> {
+                        manualTextView.visibility = View.VISIBLE
+                        manualTextView.setText(getString(R.string.manual_not_support))
+                    }
+                }
+            }
         }
         setHasOptionsMenu(true)
 
         return binding.root
+    }
+
+    override fun onResume() {
+        super.onResume()
     }
 
     private fun createDatePicker(fab: FloatingActionButton, rootView: CoordinatorLayout) {
@@ -172,7 +231,8 @@ class PlantDetailFragment : Fragment() {
         }
 
         //date_picker_dlg.datePicker.minDate = Date().getTime()
-        //date_picker_dlg.datePicker.maxDate = Date().getTime()
+        // open max day
+        date_picker_dlg.datePicker.maxDate = Date().getTime()
         date_picker_dlg.setCustomTitle(tvCustomTitle)
         date_picker_dlg.setTitle(getString(R.string.date_setting))
         date_picker_dlg.datePicker.calendarViewShown = false

@@ -43,7 +43,7 @@ class GardenPlantingRepository @Inject constructor(
             "BW7-巴斯光年" -> {
                 gardenPlanting = GardenPlanting(plantId, "2020-11-01", dateBuy)
             }
-            "BW7-巴斯光年" -> {
+            "BW7-復仇者聯盟" -> {
                 gardenPlanting = GardenPlanting(plantId, "2020-10-21", dateBuy)
             }
             "BW7-紅" -> {

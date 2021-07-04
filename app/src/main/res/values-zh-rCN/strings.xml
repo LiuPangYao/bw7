@@ -49,5 +49,7 @@
     <string name="date_setting">時間設定</string>
     <string name="ok_setting">確認</string>
     <string name="cancel_setting">取消</string>
+    <string name="manual">設計圖</string>
+    <string name="manual_not_support">未提供對應設計圖</string>
 
 </resources>

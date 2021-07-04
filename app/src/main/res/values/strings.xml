@@ -57,5 +57,7 @@
     <string name="date_setting">Date Setting</string>
     <string name="ok_setting">OK</string>
     <string name="cancel_setting">Cancel</string>
+    <string name="manual">Design Manual</string>
+    <string name="manual_not_support">not support manual</string>
 
 </resources>

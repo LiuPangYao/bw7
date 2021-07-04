@@ -67,3 +67,8 @@ fun bindWateringText(textView: TextView, wateringInterval: Int) {
 
     textView.text = quantityString
 }
+
+@BindingAdapter("manualText")
+fun bindManualText(textView: TextView, wateringInterval: Int) {
+    textView.text = wateringInterval.toString()
+}
