@@ -55,8 +55,8 @@ class PlantDetailFragment : Fragment() {
 
     private val plantDetailViewModel: PlantDetailViewModel by viewModels()
 
-    lateinit var manualImage: ImageView
-    lateinit var manualTextView: TextView
+    //lateinit var manualImage: ImageView
+    //lateinit var manualTextView: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -83,8 +83,8 @@ class PlantDetailFragment : Fragment() {
                 }
             }
 
-            manualImage = root.findViewById(R.id.manualImage1)
-            manualTextView = root.findViewById(R.id.manualText)
+            //manualImage = root.findViewById(R.id.manualImage1)
+            //manualTextView = root.findViewById(R.id.manualText)
 
             galleryNav.setOnClickListener { navigateToGallery() }
 
@@ -126,7 +126,7 @@ class PlantDetailFragment : Fragment() {
                 }
             }
 
-            manualButton.setOnClickListener { view ->
+            /*manualButton.setOnClickListener { view ->
                 //manualTextView.visibility = View.GONE
 
                 when (plantDetailViewModel.plant.value?.name) {
@@ -174,7 +174,7 @@ class PlantDetailFragment : Fragment() {
                         manualTextView.setText(getString(R.string.manual_not_support))
                     }
                 }
-            }
+            }*/
         }
         setHasOptionsMenu(true)
 

@@ -188,7 +188,7 @@
                     android:text="Get Manual"
                     android:textColor="@color/sunflower_green_900"
                     android:textIsSelectable="true"
-                    android:visibility="visible"
+                    android:visibility="gone"
                     android:layout_marginBottom="@dimen/margin_normal"
                     app:layout_constraintBottom_toTopOf="@id/manualText"
                     app:layout_constraintStart_toStartOf="parent" />
@@ -204,11 +204,11 @@
                     android:gravity="center"
                     android:textColor="@color/sunflower_black"
                     android:textIsSelectable="true"
-                    android:visibility="gone"
+                    android:visibility="@{viewModel.plant.manualValue}"
                     app:layout_constraintBottom_toTopOf="@id/manualImage1"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:manualText="@{viewModel.plant.pngId}" />
+                    android:text="@string/manual" />
 
                 <ImageView
                     android:id="@+id/manualImage1"
@@ -222,7 +222,9 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/plant_description" />
+                    app:layout_constraintTop_toBottomOf="@id/plant_description"
+                    app:drawablePrepare="@{viewModel.plant.drawablePath}"
+                    android:visibility="@{viewModel.plant.manualValue}"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -72,3 +72,12 @@ fun bindWateringText(textView: TextView, wateringInterval: Int) {
 fun bindManualText(textView: TextView, wateringInterval: Int) {
     textView.text = wateringInterval.toString()
 }
+
+@BindingAdapter("drawablePrepare")
+fun bindImageView(imageView: ImageView, description: String?) {
+    if (description != null) {
+        val sValue: String = description.replace("R.drawable.", "")
+        val id: Int = imageView.context.getResources().getIdentifier(sValue, "drawable", imageView.context.getPackageName())
+        imageView.setImageResource(id);
+    }
+}
