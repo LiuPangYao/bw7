@@ -159,7 +159,7 @@
 
         <TextView
             android:id="@+id/textView11"
-            android:layout_width="150dp"
+            android:layout_width="145dp"
             android:layout_height="60dp"
             android:gravity="center_vertical"
             android:paddingLeft="20dp"

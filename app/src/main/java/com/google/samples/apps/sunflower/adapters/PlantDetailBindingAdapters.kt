@@ -77,7 +77,8 @@ fun bindManualText(textView: TextView, wateringInterval: Int) {
 fun bindImageView(imageView: ImageView, description: String?) {
     if (description != null) {
         val sValue: String = description.replace("R.drawable.", "")
-        val id: Int = imageView.context.getResources().getIdentifier(sValue, "drawable", imageView.context.getPackageName())
+        val id: Int = imageView.context.getResources().getIdentifier(sValue,
+            "drawable", imageView.context.getPackageName())
         imageView.setImageResource(id);
     }
 }
