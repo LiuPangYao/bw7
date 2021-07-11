@@ -17,6 +17,7 @@
 package com.google.samples.apps.sunflower
 
 import android.app.DatePickerDialog
+import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
@@ -26,9 +27,10 @@ import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
+import android.widget.Toast.makeText
+import androidx.appcompat.app.AlertDialog
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.app.ShareCompat
 import androidx.core.widget.NestedScrollView
@@ -44,6 +46,7 @@ import com.google.samples.apps.sunflower.data.Plant
 import com.google.samples.apps.sunflower.databinding.FragmentPlantDetailBinding
 import com.google.samples.apps.sunflower.viewmodels.PlantDetailViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.NonCancellable.cancel
 import java.util.*
 
 
@@ -54,9 +57,6 @@ import java.util.*
 class PlantDetailFragment : Fragment() {
 
     private val plantDetailViewModel: PlantDetailViewModel by viewModels()
-
-    //lateinit var manualImage: ImageView
-    //lateinit var manualTextView: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -126,55 +126,9 @@ class PlantDetailFragment : Fragment() {
                 }
             }
 
-            /*manualButton.setOnClickListener { view ->
-                //manualTextView.visibility = View.GONE
-
-                when (plantDetailViewModel.plant.value?.name) {
-                    "BW7-Moss" -> {
-                        manualImage.setImageResource(R.drawable.bw09)
-                        manualTextView.visibility = View.GONE
-                    }
-                    "BW7-變形金剛柯博文" -> {
-                        manualImage.setImageResource(R.drawable.bw08)
-                        manualTextView.visibility = View.GONE
-                    }
-                    "BW7-原子小金剛" -> {
-                        manualImage.setImageResource(R.drawable.bw07)
-                        manualTextView.visibility = View.GONE
-                    }
-                    "BW7-復仇者聯盟" -> {
-                        manualImage.setImageResource(R.drawable.bw05)
-                        manualTextView.visibility = View.GONE
-                    }
-                    "BW7-變形金剛大黃蜂" -> {
-                        manualImage.setImageResource(R.drawable.bw06)
-                        manualTextView.visibility = View.GONE
-                    }
-                    "BW7-巴斯光年" -> {
-                        manualImage.setImageResource(R.drawable.bw04)
-                        manualTextView.visibility = View.GONE
-                    }
-                    "BW7-紅" -> {
-                        manualImage.setImageResource(R.drawable.bw03)
-                        manualTextView.visibility = View.GONE
-                    }
-                    "BW7-綠" -> {
-                        manualImage.setImageResource(R.drawable.bw01)
-                        manualTextView.visibility = View.GONE
-                    }
-                    "BW7-藍" -> {
-                        manualImage.setImageResource(R.drawable.bw02)
-                        manualTextView.visibility = View.GONE
-                    }
-                    "BW7-螢光" -> {
-                        manualImage.setImageResource(R.drawable.bw10)
-                        manualTextView.visibility = View.GONE
-                    } else -> {
-                        manualTextView.visibility = View.VISIBLE
-                        manualTextView.setText(getString(R.string.manual_not_support))
-                    }
-                }
-            }*/
+            imageDelete.setOnClickListener {
+                deleteDialog()
+            }
         }
         setHasOptionsMenu(true)
 
@@ -238,6 +192,31 @@ class PlantDetailFragment : Fragment() {
         date_picker_dlg.datePicker.calendarViewShown = false
         date_picker_dlg.datePicker.spinnersShown = true
         date_picker_dlg.show()
+    }
+
+    private fun deleteDialog() {
+        // Use the Builder class for convenient dialog construction
+        val builder = AlertDialog.Builder(this.requireActivity())
+        builder.setMessage("確認刪除")
+            .setPositiveButton(R.string.ok_setting,
+                DialogInterface.OnClickListener { dialog, id ->
+                    // FIRE ZE MISSILES!
+                    deleteDetail()
+                })
+            .setNegativeButton(R.string.cancel_setting,
+                DialogInterface.OnClickListener { dialog, id ->
+                    // User cancelled the dialog
+                })
+        // Create the AlertDialog object and return it
+        builder.create().show()
+    }
+
+    private fun deleteDetail() {
+        Log.d("TAG", "delete Detail")
+        plantDetailViewModel.plant.value?.let { plant ->
+            plantDetailViewModel.deletePlantToGarden();
+        }
+        findNavController().navigateUp()
     }
 
     private fun navigateToGallery() {

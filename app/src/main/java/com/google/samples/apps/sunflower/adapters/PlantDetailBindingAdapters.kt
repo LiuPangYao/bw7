@@ -17,6 +17,7 @@
 package com.google.samples.apps.sunflower.adapters
 
 import android.text.method.LinkMovementMethod
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.text.HtmlCompat
@@ -43,6 +44,15 @@ fun bindIsFabGone(view: FloatingActionButton, isGone: Boolean?) {
         view.hide()
     } else {
         view.show()
+    }
+}
+
+@BindingAdapter("isImageGone")
+fun bindIsImageGone(image: ImageView, isGone: Boolean?) {
+    if (isGone == null || isGone) {
+        image.visibility = View.GONE
+    } else {
+        image.visibility = View.VISIBLE
     }
 }
 

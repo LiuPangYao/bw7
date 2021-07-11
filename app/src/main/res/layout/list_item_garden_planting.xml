@@ -19,9 +19,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
         <variable
             name="clickListener"
             type="android.view.View.OnClickListener"/>
+
+        <variable
+            name="clickLongListener"
+            type="android.view.View.OnLongClickListener"/>
+
+        <variable
+            name="viewModelData"
+            type="com.google.samples.apps.sunflower.viewmodels.GardenPlantingListViewModel"/>
+
         <variable
             name="viewModel"
             type="com.google.samples.apps.sunflower.viewmodels.PlantAndGardenPlantingsViewModel"/>

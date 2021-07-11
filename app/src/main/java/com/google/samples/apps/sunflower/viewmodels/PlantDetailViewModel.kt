@@ -49,6 +49,12 @@ class PlantDetailViewModel @Inject constructor(
         }
     }
 
+    fun deletePlantToGarden() {
+        viewModelScope.launch {
+            gardenPlantingRepository.removeGardenPlantingUseId(plantId)
+        }
+    }
+
     fun hasValidUnsplashKey() = (BuildConfig.UNSPLASH_ACCESS_KEY != "null")
 
     companion object {

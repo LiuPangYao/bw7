@@ -16,6 +16,7 @@
 
 package com.google.samples.apps.sunflower.adapters
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -59,6 +60,9 @@ class GardenPlantingAdapter :
                     navigateToPlant(plantId, view)
                 }
             }
+        }
+
+        private fun deletePlant(plantId: String) {
         }
 
         private fun navigateToPlant(plantId: String, view: View) {

@@ -168,30 +168,12 @@
                     android:layout_marginStart="@dimen/margin_small"
                     android:layout_marginTop="@dimen/margin_small"
                     android:layout_marginEnd="@dimen/margin_small"
-                    android:paddingBottom="90dp"
                     android:textIsSelectable="true"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/plant_watering"
                     app:renderHtml="@{viewModel.plant.description}"
-                    tools:text="Details about the plant" />ˊ
-
-                <Button
-                    android:id="@+id/manualButton"
-                    style="?android:attr/textAppearanceMedium"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/margin_small"
-                    android:layout_marginTop="@dimen/margin_small"
-                    android:background="@color/sunflower_green_500"
-                    android:gravity="left"
-                    android:text="Get Manual"
-                    android:textColor="@color/sunflower_green_900"
-                    android:textIsSelectable="true"
-                    android:visibility="gone"
-                    android:layout_marginBottom="@dimen/margin_normal"
-                    app:layout_constraintBottom_toTopOf="@id/manualText"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    tools:text="Details about the plant" />
 
                 <TextView
                     android:id="@+id/manualText"
@@ -199,16 +181,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_small"
-                    android:layout_marginTop="@dimen/margin_small"
                     android:layout_marginEnd="@dimen/margin_small"
                     android:gravity="center"
+                    android:text="@string/manual"
+                    android:layout_marginTop="20dp"
                     android:textColor="@color/sunflower_black"
                     android:textIsSelectable="true"
                     android:visibility="@{viewModel.plant.manualValue}"
-                    app:layout_constraintBottom_toTopOf="@id/manualImage1"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    android:text="@string/manual" />
+                    app:layout_constraintTop_toBottomOf="@+id/plant_description" />
 
                 <ImageView
                     android:id="@+id/manualImage1"
@@ -216,16 +198,25 @@
                     android:layout_width="300dp"
                     android:layout_height="300dp"
                     android:layout_marginStart="@dimen/margin_small"
-                    android:layout_marginTop="@dimen/margin_small"
                     android:layout_marginEnd="@dimen/margin_small"
                     android:textIsSelectable="true"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:visibility="@{viewModel.plant.manualValue}"
+                    app:drawablePrepare="@{viewModel.plant.drawablePath}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/plant_description"
-                    app:drawablePrepare="@{viewModel.plant.drawablePath}"
-                    android:visibility="@{viewModel.plant.manualValue}"/>
+                    app:layout_constraintTop_toBottomOf="@+id/manualText" />
 
+                <ImageView
+                    android:id="@+id/imageDelete"
+                    style="?android:attr/textAppearanceMedium"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/delete_icon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:isImageGone="@{!viewModel.isPlanted}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/manualImage1" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.core.widget.NestedScrollView>

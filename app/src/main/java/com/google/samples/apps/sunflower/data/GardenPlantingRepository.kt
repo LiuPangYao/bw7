@@ -31,13 +31,13 @@ class GardenPlantingRepository @Inject constructor(
             "BW7-Moss" -> {
                 gardenPlanting = GardenPlanting(plantId, "2021-06-11", dateBuy)
             }
-            "BW7-變形金剛柯博文" -> {
+            "BW7-柯博文" -> {
                 gardenPlanting = GardenPlanting(plantId, "2021-05-02", dateBuy)
             }
             "BW7-原子小金剛" -> {
                 gardenPlanting = GardenPlanting(plantId, "2021-01-30", dateBuy)
             }
-            "BW7-變形金剛大黃蜂" -> {
+            "BW7-大黃蜂" -> {
                 gardenPlanting = GardenPlanting(plantId, "2020-12-20", dateBuy)
             }
             "BW7-巴斯光年" -> {
@@ -55,7 +55,7 @@ class GardenPlantingRepository @Inject constructor(
             "BW7-藍" -> {
                 gardenPlanting = GardenPlanting(plantId, "2019-12-21", dateBuy)
             }
-            "BW7-螢光" -> {
+            "BW7-GID" -> {
                 gardenPlanting = GardenPlanting(plantId, "2021-07-01", dateBuy)
             }
             else -> {
@@ -72,6 +72,10 @@ class GardenPlantingRepository @Inject constructor(
 
     suspend fun removeGardenPlanting(gardenPlanting: GardenPlanting) {
         gardenPlantingDao.deleteGardenPlanting(gardenPlanting)
+    }
+
+    suspend fun removeGardenPlantingUseId(plantId: String) {
+        gardenPlantingDao.deleteGardenPlantingUseId(plantId)
     }
 
     fun isPlanted(plantId: String) =
