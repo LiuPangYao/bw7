@@ -15,7 +15,7 @@
  */
  
  // test source tree
- // author update
+ // author update test conflict
 
 package com.google.samples.apps.sunflower
 
