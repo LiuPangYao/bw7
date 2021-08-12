@@ -15,7 +15,8 @@
  */
  
  // test source tree
- // author update local
+ // author update local and test conflict
+
 
 package com.google.samples.apps.sunflower
 
