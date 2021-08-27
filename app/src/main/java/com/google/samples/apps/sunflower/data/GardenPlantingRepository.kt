@@ -58,6 +58,12 @@ class GardenPlantingRepository @Inject constructor(
             "BW7-GID" -> {
                 gardenPlanting = GardenPlanting(plantId, "2021-07-01", dateBuy)
             }
+            "BW7-戰士" -> {
+                gardenPlanting = GardenPlanting(plantId, "2021-08-19", dateBuy)
+            }
+            "BW7-金剛" -> {
+                gardenPlanting = GardenPlanting(plantId, "2021-08-24", dateBuy)
+            }
             else -> {
                 gardenPlanting = GardenPlanting(plantId, "unknow", dateBuy)
             }

@@ -13,10 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
- // test source tree
- // author update local and test conflict
-
 
 package com.google.samples.apps.sunflower
 

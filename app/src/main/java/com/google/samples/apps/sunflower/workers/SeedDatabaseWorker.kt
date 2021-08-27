@@ -64,6 +64,8 @@ class SeedDatabaseWorker(
             val toy_9: Plant = Plant("BW7-藍", "BW7-藍", "紅,藍,綠 3色早期作品.", 2500, 2500, "https://imgur.com/nAbEfEw.png", 2,"R.drawable.bw02", 1)
             val toy_10: Plant = Plant("BW7-透明", "BW7-透明", "未販售,透明版.", 2500, 2500, "https://imgur.com/nAbEfEw.png", 0,"", 4)
             val toy_11: Plant = Plant("BW7-GID", "BW7-GID", "帥氣的夜光款設計師軟膠,超限定版本.", 2700, 2700, "https://imgur.com/ZVR8rcc.png", 10, "R.drawable.bw10", 1)
+            val toy_12: Plant = Plant("BW7-戰士", "BW7-戰士", "本次全新 BW-7 戰士版本，加入鋼彈的元素，除了原有的舊化厚實質感外，也展現帥氣的機器人一面.", 2600, 2600, "https://imgur.com/nAbEfEw.png", 11, "R.drawable.bw11", 1)
+            val toy_13: Plant = Plant("BW7-金剛", "BW7-金剛", "全新推出 BW-7 金剛 Monster Taipei 限定版，加入鐵金剛元素，除了原有的厚實質感外，也展現帥氣的一面.", 2600, 2600, "https://imgur.com/nAbEfEw.png", 12, "", 4)
 
             val plantList: MutableList<Plant>  = mutableListOf()
             plantList.add(toy_10)
@@ -77,6 +79,8 @@ class SeedDatabaseWorker(
             plantList.add(toy_2)
             plantList.add(toy_1)
             plantList.add(toy_11)
+            plantList.add(toy_12)
+            plantList.add(toy_13)
 
             // 20210627 add new data into database
             val database = AppDatabase.getInstance(applicationContext)

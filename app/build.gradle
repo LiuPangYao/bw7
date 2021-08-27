@@ -36,8 +36,8 @@ android {
         minSdkVersion rootProject.minSdkVersion
         targetSdkVersion rootProject.targetSdkVersion
         testInstrumentationRunner "com.google.samples.apps.sunflower.utilities.MainTestRunner"
-        versionCode 6
-        versionName "1.2.3"
+        versionCode 7
+        versionName "1.2.4"
         vectorDrawables.useSupportLibrary true
 
         // Consult the README on instructions for setting up Unsplash API key
