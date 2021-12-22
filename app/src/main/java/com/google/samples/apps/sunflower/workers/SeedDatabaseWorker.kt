@@ -60,12 +60,15 @@ class SeedDatabaseWorker(
             val toy_5: Plant = Plant("BW7-巴斯光年", "BW7-巴斯光年", "玩具總動員巴斯光年配色,BW-7 Robot Ver.4 宇宙版本,除了原有的舊化厚實質感,也帶出十足的宇宙感,猶如要奔向外太空般的氣勢.", 2600, 2600, "https://imgur.com/bMDWcpI.png", 4,"R.drawable.bw04", 1)
             val toy_6: Plant = Plant("BW7-復仇者聯盟", "BW7-復仇者聯盟", "胸口紅色寶石,搭配藍寶石手套.", 2500, 2500, "https://imgur.com/9DxxmxR.png", 5,"R.drawable.bw05", 1)
             val toy_7: Plant = Plant("BW7-紅", "BW7-紅", "紅,藍,綠 3色早期作品,BW-7 Robot 紅色聖誕版本,除了原有的舊化厚實質感,這次應景了聖誕氣氛,以鮮豔的紅色,整體配色較為繽紛豐富,還有附上可愛白色小毛球可隨意搭配,像是聖誕老公公一般帶給大家祝福!", 2500, 2500, "https://imgur.com/AAI9dn3.png",3, "R.drawable.bw03", 1)
-            val toy_8: Plant = Plant("BW7-綠", "BW7-綠", "紅,藍,綠 3色早期作品,Monster Taipei 20週年紀念版-軟膠公仔.", 2200, 2200, "https://imgur.com/nAbEfEw.png", 1,"R.drawable.bw01", 1)
-            val toy_9: Plant = Plant("BW7-藍", "BW7-藍", "紅,藍,綠 3色早期作品.", 2500, 2500, "https://imgur.com/nAbEfEw.png", 2,"R.drawable.bw02", 1)
+            val toy_8: Plant = Plant("BW7-綠", "BW7-綠", "紅,藍,綠 3色早期作品,Monster Taipei 20週年紀念版-軟膠公仔.", 2200, 2200, "https://imgur.com/yfRrPDJ.png", 1,"R.drawable.bw01", 1)
+            val toy_9: Plant = Plant("BW7-藍", "BW7-藍", "紅,藍,綠 3色早期作品.", 2500, 2500, "https://imgur.com/wHHk3cs.png", 2,"R.drawable.bw02", 1)
             val toy_10: Plant = Plant("BW7-透明", "BW7-透明", "未販售,透明版.", 2500, 2500, "https://imgur.com/nAbEfEw.png", 0,"", 4)
             val toy_11: Plant = Plant("BW7-GID", "BW7-GID", "帥氣的夜光款設計師軟膠,超限定版本.", 2700, 2700, "https://imgur.com/ZVR8rcc.png", 10, "R.drawable.bw10", 1)
-            val toy_12: Plant = Plant("BW7-戰士", "BW7-戰士", "本次全新 BW-7 戰士版本，加入鋼彈的元素，除了原有的舊化厚實質感外，也展現帥氣的機器人一面.", 2600, 2600, "https://imgur.com/nAbEfEw.png", 11, "R.drawable.bw11", 1)
-            val toy_13: Plant = Plant("BW7-金剛", "BW7-金剛", "全新推出 BW-7 金剛 Monster Taipei 限定版，加入鐵金剛元素，除了原有的厚實質感外，也展現帥氣的一面.", 2600, 2600, "https://imgur.com/nAbEfEw.png", 12, "", 4)
+            val toy_12: Plant = Plant("BW7-戰士", "BW7-戰士", "本次全新 BW-7 戰士版本，加入鋼彈的元素，除了原有的舊化厚實質感外，也展現帥氣的機器人一面.", 2600, 2600, "https://imgur.com/gC52tIH.png", 11, "R.drawable.bw11", 1)
+            val toy_13: Plant = Plant("BW7-金剛", "BW7-金剛", "全新推出 BW-7 金剛 Monster Taipei 限定版，加入鐵金剛元素，除了原有的厚實質感外，也展現帥氣的一面.", 2600, 2600, "https://imgur.com/nAbEfEw.png", 12, "R.drawable.bw11", 1)
+            val toy_14: Plant = Plant("BW7-英雄", "BW7-英雄", "年末全新推出 BW-7 英雄版本，融入日本英雄角色配色，除展現原有的銀色質感外，也露出即將到來聖誕年節的喜氣。", 2300, 2300, "https://imgur.com/nAbEfEw.png", 13, "", 4)
+
+            // wait
 
             val plantList: MutableList<Plant>  = mutableListOf()
             plantList.add(toy_10)
@@ -81,6 +84,8 @@ class SeedDatabaseWorker(
             plantList.add(toy_11)
             plantList.add(toy_12)
             plantList.add(toy_13)
+            plantList.add(toy_14)
+
 
             // 20210627 add new data into database
             val database = AppDatabase.getInstance(applicationContext)
