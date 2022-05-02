@@ -20,9 +20,6 @@ import android.content.Context
 import android.util.Log
 import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
-import com.google.gson.stream.JsonReader
 import com.google.samples.apps.sunflower.data.AppDatabase
 import com.google.samples.apps.sunflower.data.Plant
 import kotlinx.coroutines.Dispatchers
@@ -67,6 +64,8 @@ class SeedDatabaseWorker(
             val toy_11: Plant = Plant("BW7-戰士", "BW7-戰士", "本次全新 BW-7 戰士版本，加入鋼彈的元素，除了原有的舊化厚實質感外，也展現帥氣的機器人一面.", 2600, 2600, "https://imgur.com/gC52tIH.png", 11, "R.drawable.bw11", 1)
             val toy_12: Plant = Plant("BW7-金剛", "BW7-金剛", "全新推出 BW-7 金剛 Monster Taipei 限定版，加入鐵金剛元素，除了原有的厚實質感外，也展現帥氣的一面.", 2600, 2600, "https://imgur.com/nAbEfEw.png", 12, "R.drawable.bw11", 1)
             val toy_13: Plant = Plant("BW7-英雄", "BW7-英雄", "年末全新推出 BW-7 英雄版本，融入日本英雄角色配色，除展現原有的銀色質感外，也露出即將到來聖誕年節的喜氣。", 2300, 2300, "https://imgur.com/2kmJWmP.png", 13, "R.drawable.bw13", 1)
+            val toy_14: Plant = Plant("BW7-大鐵人", "BW7-大鐵人", "本次全新 BW-7 大鐵人07 版本，有著亮眼的機器人主題塗裝，也展現了十足力量感。", 2400, 2400, "https://imgur.com/2kmJWmP.png", 14, "R.drawable.bw14", 1)
+
 
             val plantList: MutableList<Plant>  = mutableListOf()
             plantList.add(toy_0)
@@ -83,6 +82,7 @@ class SeedDatabaseWorker(
             plantList.add(toy_11)
             plantList.add(toy_12)
             plantList.add(toy_13)
+            plantList.add(toy_14)
 
             // 20210627 add new data into database
             val database = AppDatabase.getInstance(applicationContext)

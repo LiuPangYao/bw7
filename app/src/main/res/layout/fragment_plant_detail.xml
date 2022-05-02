@@ -185,7 +185,6 @@
                     android:gravity="center"
                     android:text="@string/manual"
                     android:layout_marginTop="20dp"
-                    android:textColor="@color/sunflower_black"
                     android:textIsSelectable="true"
                     android:visibility="@{viewModel.plant.manualValue}"
                     app:layout_constraintEnd_toEndOf="parent"
